@@ -31,6 +31,6 @@ public class GetOrderListTest {
         List<HashMap> orderBody = responseCreate.extract().path("orders");
         assertEquals(200, actualStatusCodeCreate);
         assertNotNull(orderBody);
-        assertTrue(orderBody.get(1).get("id").toString().matches("[\\d]+"));
+        assertTrue(orderBody.get(0).get("id").toString().matches("[\\d]+"));
     }
 }

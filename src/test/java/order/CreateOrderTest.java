@@ -15,14 +15,14 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 
 @RunWith(Parameterized.class)
 public class CreateOrderTest {
-    private static final String  firstName = "Петр";
-    private static final String  lastName = "Петров";
-    private static final String  address = "Москва, Ленинский проспект, д. 99";
-    private static final String  metroStation = "Новаторская";
-    private static final String  phone = "89880287766";
-    private static final int  rentTime = 1;
-    private static final String  deliveryDate = "2024-02-18";
-    private static final String  comment = "Тестовый заказ";
+    private static final String  FIRST_NAME = "Петр";
+    private static final String  LAST_NAME = "Петров";
+    private static final String  ADDRESS = "Москва, Ленинский проспект, д. 99";
+    private static final String  METRO_STATION = "Новаторская";
+    private static final String  PHONE = "89880287766";
+    private static final int  RENT_TIME = 1;
+    private static final String  DELIVERY_DATE = "2024-02-18";
+    private static final String  COMMENT = "Тестовый заказ";
     private final String color;
     String track;
 
@@ -49,7 +49,7 @@ public class CreateOrderTest {
     @DisplayName("Создание заказа")
     @Description("Заказ можно создать с указанием только одного цвета, обоих цветов, либо без их указания в принципе")
     public void createOrder() {
-        Order order = new Order(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment, new String[]{color});
+        Order order = new Order(FIRST_NAME, LAST_NAME, ADDRESS, METRO_STATION, PHONE, RENT_TIME, DELIVERY_DATE, COMMENT, new String[]{color});
         Response response = OrderMethods.createOrder(order);
         track = response.then().extract().path("track").toString();
         response.then().assertThat().statusCode(201)
@@ -62,7 +62,7 @@ public class CreateOrderTest {
     @DisplayName("Создание заказа без указания параметра цвета")
     @Description("Заказ можно создать, если не передать параметр color")
     public void createOrderWithoutColor() {
-        Order order = new Order(firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, comment);
+        Order order = new Order(FIRST_NAME, LAST_NAME, ADDRESS, METRO_STATION, PHONE, RENT_TIME, DELIVERY_DATE, COMMENT);
         Response response = OrderMethods.createOrder(order);
         track = response.then().extract().path("track").toString();
         response.then().assertThat().statusCode(201)

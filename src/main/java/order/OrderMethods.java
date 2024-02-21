@@ -7,7 +7,7 @@ import io.restassured.response.ValidatableResponse;
 import static constants.UrlAddresses.ORDER;
 import static io.restassured.RestAssured.given;
 
-public class OrderMethods extends User {
+public class OrderMethods extends Client {
     @Step("Создание заказа")
     public static Response createOrder(Order order) {
         return given()
