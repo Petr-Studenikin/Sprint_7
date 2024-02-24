@@ -12,6 +12,7 @@ public class CourierMethods {
         return given()
                 .header("Content-Type", "application/json")
                 .and()
+                .baseUri(MAIN_URL)
                 .body(courier)
                 .when()
                 .post(COURIER);
@@ -22,6 +23,7 @@ public class CourierMethods {
         return given()
                 .header("Content-Type", "application/json")
                 .and()
+                .baseUri(MAIN_URL)
                 .body(courier)
                 .when()
                 .post(LOGIN);
@@ -30,6 +32,7 @@ public class CourierMethods {
     @Step("Удаление курьера")
     public static void deleteCourier(String courierId) {
         given()
+                .baseUri(MAIN_URL)
                 .delete(COURIER + "{courierId}", courierId);
     }
 }
