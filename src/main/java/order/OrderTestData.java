@@ -2,7 +2,7 @@ package order;
 
 import org.junit.runners.Parameterized;
 
-public class RestBase {
+public class OrderTestData {
     private static final String  FIRST_NAME = "Петр";
     private static final String  LAST_NAME = "Петров";
     private static final String  ADDRESS = "Москва, Ленинский проспект, д. 99";
@@ -15,7 +15,7 @@ public class RestBase {
 
 
 
-    public RestBase(String[] color){
+    public OrderTestData(String[] color){
         this.color=color;
     }
     @Parameterized.Parameters

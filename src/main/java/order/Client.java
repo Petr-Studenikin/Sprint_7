@@ -7,6 +7,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import static constants.UrlAddresses.MAIN_URL;
 
 public class Client {
+
     protected RequestSpecification getSpec() {
         return new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)

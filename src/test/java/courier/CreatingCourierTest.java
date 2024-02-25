@@ -2,22 +2,19 @@ package courier;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
+
 import io.restassured.response.Response;
 import org.junit.After;
-import org.junit.Before;
+
 import org.junit.Test;
-import static constants.UrlAddresses.MAIN_URL;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class CreatingCourierTest {
     private final CourierTestData courierTestData = new CourierTestData();
     String id = null;
 
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = MAIN_URL;
-    }
+
 
     @Test
     @DisplayName("Создание курьера")

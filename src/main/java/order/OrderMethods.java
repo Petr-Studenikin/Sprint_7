@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
+import static constants.UrlAddresses.MAIN_URL;
 import static constants.UrlAddresses.ORDER;
 import static io.restassured.RestAssured.given;
 
