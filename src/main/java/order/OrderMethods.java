@@ -12,9 +12,9 @@ public class OrderMethods extends Client {
     @Step("Создание заказа")
     public static Response createOrder(Order order) {
         return given()
+                .spec(getSpec())
                 .header("Content-Type", "application/json")
                 .and()
-                .baseUri(MAIN_URL)
                 .body(order)
                 .when()
                 .post(ORDER);
