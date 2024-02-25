@@ -14,6 +14,7 @@ public class OrderMethods extends Client {
         return given()
                 .header("Content-Type", "application/json")
                 .and()
+                .baseUri(MAIN_URL)
                 .body(order)
                 .when()
                 .post(ORDER);

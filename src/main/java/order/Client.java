@@ -8,7 +8,7 @@ import static constants.UrlAddresses.MAIN_URL;
 
 public class Client {
 
-    protected RequestSpecification getSpec() {
+    protected static RequestSpecification getSpec() {
         return new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
                 .setBaseUri(MAIN_URL)

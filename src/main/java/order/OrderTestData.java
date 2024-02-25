@@ -13,6 +13,7 @@ public class OrderTestData {
     private static final String  COMMENT = "Тестовый заказ";
     private String[] color;
 
+    String track;
 
 
     public OrderTestData(String[] color){
